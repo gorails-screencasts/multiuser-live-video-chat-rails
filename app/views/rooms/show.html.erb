@@ -1,0 +1,23 @@
+<div class="page-header">
+  <%= link_to rooms_path, class: 'btn btn-default' do %>
+    All Rooms
+  <% end %>
+  <%= link_to edit_room_path(@room), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show room</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Name:</dt>
+  <dd><%= @room.name %></dd>
+</dl>
+
+<div id="videos"
+     data-controller="vonage"
+     data-vonage-api-key="<%= Rails.application.credentials.vonage_api_key %>"
+     data-vonage-session-id="<%= @room.vonage_session_id %>"
+     data-vonage-token="<%= @token %>"
+     data-vonage-name="<%= current_user.name %>"
+     >
+</div>

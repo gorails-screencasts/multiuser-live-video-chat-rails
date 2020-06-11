@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_11_145516) do
+ActiveRecord::Schema.define(version: 2020_06_11_150446) do
 
   create_table "announcements", force: :cascade do |t|
     t.datetime "published_at"
@@ -39,6 +39,13 @@ ActiveRecord::Schema.define(version: 2020_06_11_145516) do
     t.string "action"
     t.bigint "notifiable_id"
     t.string "notifiable_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.string "name"
+    t.string "vonage_session_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
